@@ -10,10 +10,7 @@ const Character = ({ id, name, description, type }) => {
             <img src={src} className="card-img-top" alt={name} />
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
-                <p className="card-text">
-                    {description}
-                </p>
-                <Link to="#" className="btn btn-primary">
+                <Link to={`/character/${id}`} className="btn btn-primary">
                     Ver más
                 </Link>
             </div>
