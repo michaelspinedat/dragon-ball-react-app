@@ -1,6 +1,7 @@
 import React from 'react'
 
-const WomenScreen = () => {
+const WomenScreen = (props) => {
+    console.log(props);
     return (
         <div>WomenScreen</div>
     )
