@@ -1,12 +1,11 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import { Characters } from '../models/Characters'
 import CharacterScreen from '../pages/CharacterScreen'
 import ManScreen from '../pages/ManScreen'
 import SearchScreen from '../pages/SearchScreen'
 import WomenScreen from '../pages/WomenScreen'
-import LoginRouter from './LoginRouter'
 
 const AppRouter = () => {
 
@@ -14,7 +13,7 @@ const AppRouter = () => {
     const women = Characters.filter(char => char.type === "m");
 
     return (
-        <Router>
+        <>
             <Navbar />
             <Switch>
                 <Route exact path={"/men"}
@@ -23,9 +22,9 @@ const AppRouter = () => {
                     render={props => (<WomenScreen women={women} {...props} />)} />
                 <Route exact path={"/search"} component={SearchScreen} />
                 <Route exact path="/character/:id" component={CharacterScreen} />
+                <Redirect to="/men" />
             </Switch>
-            <LoginRouter />
-        </Router>
+        </>
 
     )
 }

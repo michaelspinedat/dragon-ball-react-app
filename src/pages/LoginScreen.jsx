@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../contexts/AuthContext'
+import { authTypes } from '../types/authTypes';
 
 const LoginScreen = ({ history }) => {
 
-
+    const { dispatch } = useContext(AuthContext);
+    
     const handleLogin = () => {
-        history.push("/men")
+        dispatch({ type: authTypes.login });
+        history.push("/men");
     }
 
     return (

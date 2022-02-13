@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer } from 'react'
 import { AuthContext } from './contexts/AuthContext';
 import { AuthReducer } from './reducers/AuthReducer'
-import AppRouter from './routes/AppRouter'
+import LoginRouter from './routes/LoginRouter';
 
 const App = () => {
 
@@ -17,7 +17,7 @@ const App = () => {
     return (
         <div className="container">
             <AuthContext.Provider value={{ log, dispatch }}>
-                <AppRouter />
+                <LoginRouter />
             </AuthContext.Provider>
         </div>
     )
